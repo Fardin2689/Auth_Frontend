@@ -52,10 +52,9 @@ const FormikFormSignIn = () => {
     lastName: Yup.string()
       .max(20, "Must be 20 characters or less")
       .required("Required"),
-    phoneNumber: Yup.string().matches(
-      /^(\+98|0)?9\d{9}$/,
-      "phone number is not valid"
-    ),
+    phoneNumber: Yup.string()
+      .required("Required")
+      .matches(/^(\+98|0|0098)?9\d{9}$/, "phone number is not valid"),
     email: Yup.string().email("Invalid email address").required("Required"),
     password: Yup.string()
       .max(20, "Must be 20 characters or less")
