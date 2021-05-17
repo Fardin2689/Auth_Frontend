@@ -31,15 +31,14 @@ const ResetPass = ({ token }) => {
   const validationSchema = Yup.object({
     password: Yup.string()
       .max(20, "Must be 20 characters or less")
-      .required("Please Enter your password")
+      .required("Please Enter your new password")
       .matches(
         /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
         "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
       ),
-    passwordConfirm: Yup.string().oneOf(
-      [Yup.ref("password"), null],
-      "Passwords must match"
-    ),
+    passwordConfirm: Yup.string()
+      .required("Please Enter your password again")
+      .oneOf([Yup.ref("password"), null], "Passwords must match"),
   });
 
   return (
