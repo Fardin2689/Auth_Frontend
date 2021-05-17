@@ -4,7 +4,7 @@ Powered by [CRA](https://github.com/facebook/create-react-app) and [Material-UI]
 
 ## run the App
 
-Simply run the bellow scripts
+Simply run the bellow scripts.\
 Note: Do not forget to run the backend server.
 
 ### `npm i`
